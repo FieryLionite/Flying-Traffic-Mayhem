@@ -174,8 +174,11 @@
       <sprite>sprites\sprColor</sprite>
       <sprite>sprites\sprCredit</sprite>
     </sprites>
+    <sprite>sprites\sprite131</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bgDawn</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Util">
@@ -302,7 +305,11 @@
     <object>objects\VLine</object>
     <object>objects\Particle</object>
     <object>objects\Cursor</object>
+    <object>objects\BackToMenu</object>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tlback</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\loadout</room>
     <room>rooms\game</room>

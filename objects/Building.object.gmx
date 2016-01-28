@@ -26,7 +26,31 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-image_index = random(image_number);
+alarm[0] = 1;
+triggered = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index = round(random(image_number));
 </string>
           </argument>
         </arguments>
@@ -49,8 +73,43 @@ image_index = random(image_number);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(x &lt; -sprite_width)
+            <string>if(x &lt; -500)
     instance_destroy();
+visible = !triggered;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index != sprAd || triggered)
+    exit;
+switch (image_index){
+    case 0: case 2:
+        Player.energyBonus = 250  break;
+    case 1:
+        Player.shield = Player.shieldMax  break;
+    case 3:
+        Player.hp = Player.hpMax  break;
+               
+}
+triggered = true;
 </string>
           </argument>
         </arguments>

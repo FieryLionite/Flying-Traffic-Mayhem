@@ -167,6 +167,10 @@ shieldHullRatio = 1;
 orgSprite = sprite_index;
 if (id != Player.id &amp;&amp; size &lt; 2)
     topSpeed *= 0.7;
+    
+if (isPolice){
+    turnSP *= 0.7;
+}
 /*str = "borange"//+ choose("", "", "", "", "", "blue", "borange", "bblue", "bwhite");
 sprite_index = asset_get_index(sprite_get_name(sprite_index) + str);
 if (sprite_index &lt; 0)

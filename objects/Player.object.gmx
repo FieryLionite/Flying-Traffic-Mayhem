@@ -45,7 +45,7 @@ outSync = false;
 mountNum = 1;
 mount0 = createTool(Lazer, 0);
 mount0.isTurret = true;
-
+energyBonus = 0;
 score = 0;
 </string>
           </argument>
@@ -69,7 +69,16 @@ score = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room != game)
+            <string>if (instance_exists(btMode))
+    gamemode = btMode.image_index;
+    
+if (energyBonus &gt; 0){
+    energyBonus--;
+    capacitor = capacitorMax;
+    shieldN = 1;
+}
+    
+if (room != game)
     exit;
 if (keyboard_check(vk_tab) &amp;&amp; boost &lt;= 0 &amp;&amp; boostCD &lt;= 0)
     boost = 64;
@@ -185,6 +194,7 @@ if (boost &gt; 0){
     if (boost &lt;= 0)
         boostCD = 120;
 }
+
 </string>
           </argument>
         </arguments>

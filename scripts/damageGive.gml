@@ -38,12 +38,16 @@ if (amount > 0){
 
 if (car.hp < 0)
     if (car.id == Player.id){
-        show_message("Your Score: " + string(score));
-        window_set_fullscreen(true);
+        Player.x = -10000;
         //game_restart()
-        with (Player) instance_destroy();
-        surface_reset_target();
-        room_goto_previous();
+        //with (Player) instance_destroy();
+        Player.visible = false;
+        p = particleSpawn(1, direction - 180, 16, sprExplosion, 0);
+        p.x = Player.x;
+        p.y = Player.y;
+        p.image_index = 0;
+        p.image_speed = 1;
+        instance_create(0,0, BackToMenu);
     }
     else{
         s = 250;

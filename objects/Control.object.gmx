@@ -147,7 +147,7 @@ switch Player.gamemode{
            score -= horSpeed/10;
             
         if  (lspawn &lt;= 0){
-            lspawn = 1000 + random(500) - random(500);
+            lspawn = 700 + random(300) - random(300);
             spawnPolice(dis/1500);
             Player.dialogT = 120;
             if (dis &gt; 100)
@@ -158,7 +158,7 @@ switch Player.gamemode{
     case 1:
          
         if  (lspawn &lt;= 0){
-            lspawn = 1000 + random(500) - random(500);
+            lspawn = 700 + random(300) - random(300);
             spawnPolice(score/300);
             Player.dialogT = 120;
             Player.dialog = "New enemy sighted";
@@ -208,6 +208,9 @@ if (!instance_position(room_width+ 200, room_height + verCurrent/bfspd-100 - 10,
 }
 if (!instance_position(room_width, room_height + verCurrent/bffspd-100 - 10, BuildingFarFar))
     instance_create(room_width, room_height + verCurrent/bffspd-100, BuildingFarFar);
+    
+if (instance_number(Player) &gt; 1)
+    with (Player.id) instance_destroy();
 </string>
           </argument>
         </arguments>
